@@ -37,8 +37,17 @@ const userSchema = mongoose.Schema({
     {
        start: { type:String},
        end: { type:String}
+    },
+    refreshToken:
+    {
+        type: String,
+        default:null
+    },
+    lastLoginAt:
+    {
+        type: Date
     }
 },
 {timestamps:true});
 
-export default mongoose.model("User",userSchema);
+export default mongoose.model("Client",userSchema);
