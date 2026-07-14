@@ -24,7 +24,7 @@ const ticketSchema = mongoose.Schema({
     assignedTo:
     {
         type:mongoose.Schema.Types.ObjectId,
-        ref:"User"
+        ref:"Client"
     },
     status:
     {
@@ -35,7 +35,16 @@ const ticketSchema = mongoose.Schema({
     createdBy:
     {
         type:mongoose.Schema.Types.ObjectId,
-        ref:"User"
+        ref:"Client"
+    },
+    priorityWeight:
+    {
+        type: Number,
+        default: 2
+    },
+    resolvedAt:
+    {
+        type:Date
     }
 },
 {timestamps: true});

@@ -1,25 +1,25 @@
-import mongoose from "mongoose"
+    import mongoose from "mongoose"
 
-const ticketlogSchema = mongoose.Schema({
-    ticketId: 
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref:"Ticket"
+    const ticketlogSchema = mongoose.Schema({
+        ticketId: 
+        {
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"Ticket"
+        },
+        oldStatus:
+        {
+            type:String
+        },
+        newStatus:
+        {
+            type:String
+        },
+        changedBy:
+        {
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"Client"
+        }
     },
-    oldStatus:
-    {
-        type:String
-    },
-    newStatus:
-    {
-        type:String
-    },
-    changedBy:
-    {
-       type: mongoose.Schema.Types.ObjectId,
-       ref:"User"
-    }
-},
-{timestamps: true});
+    {timestamps: true});
 
-export default mongoose.model("TicketLog", ticketlogSchema);
+    export default mongoose.model("TicketLog", ticketlogSchema);
